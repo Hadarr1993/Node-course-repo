@@ -1,6 +1,7 @@
 
 const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
+
 const input = process.argv[2]
 
 if (input === undefined) {
