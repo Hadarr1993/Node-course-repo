@@ -10,7 +10,7 @@ if (input === undefined) {
         if (error) {return console.log(error)}
     
         forecast(latitude, longtitude, (error, forecastData) => {
-            if(error) {return console.log(error);}
+            if(error) {return console.log(error)}
             console.log(`\n${location}\n ${forecastData}`);
           }) 
     })
