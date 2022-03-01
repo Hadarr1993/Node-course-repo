@@ -3,7 +3,7 @@ const url =  `http://api.weatherstack.com/current?access_key=7aa119c000c6da79b2d
 
 const request = http.request(url, (response) => {
     let data = ''
-
+    
     response.on('data', (chunk) => {
         data = data + chunk.toString()
     })
@@ -11,6 +11,7 @@ const request = http.request(url, (response) => {
         const body = JSON.parse(data)
         console.log(body.current);
     })
+    console.log(response);
 })
 request.on('error', (error) => {
     console.log('Something went wrong' , error);
