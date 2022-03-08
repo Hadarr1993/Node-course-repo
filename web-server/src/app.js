@@ -20,21 +20,21 @@ app.use(express.static(publicPath))
 app.get('',(req, res) => {
     res.render('index', {
         title: 'Weather app',
-        name: 'Droke'
+        name: 'Hadar'
     })
 })
 
 app.get('/help',(req,res) => {
     res.render('help', {
         page: 'Help',
-        name: 'Dorke',
+        name: 'Hadar',
         title: "Help"
     })
 })
 
 app.get('/about',(req , res) => {
     res.render('about', {
-        name: 'Dorke',
+        name: 'Hadar',
         job: 'Head of Proffesional Minds Confusers',
         title: "About"
     })
@@ -47,10 +47,14 @@ app.get('/weather', (req,res) => {
         })
     }
     geocode(req.query.address, (error,{latitude,longtitude,location} = {}) => {
-        if (error) {return res.send({error})}
+        if (error) {
+            return res.send({error})
+        }
     
         forecast(latitude, longtitude, (error, forecastData) => {
-            if(error) {return res.send({error})}
+            if(error) {
+                return res.send({error})
+            }
             res.send({
                 location,
                 forecast: forecastData,
@@ -66,7 +70,7 @@ app.get('/help/*', (req,res) => {
 
 app.get('*', (req,res) => {
     res.render('404', {
-        name: "Dorke",
+        name: "Hadar",
         title: "Page not Found",
         ErrorMessage: '404 - No page exist'
     })

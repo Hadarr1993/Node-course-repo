@@ -7,14 +7,21 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="icon" href="../../public/img/weather.png">
     <link rel='stylesheet' type='text/css' media='screen' href='./css/styles.css'>
-    <script src='./js/app.js'></script>
 </head>
 <body>
     <div class="main-container">
-    {{>header}}
-    <p>Some helpful Text</p>
+        {{>header}}
+        <p>Get the weather anywhere!</p>
+        <form>
+            <input placeholder="Location">
+            <button>Search</button>
+        </form>
+        <p id="messageOne"></p>
+        <p id="messageTwo"></p>    
     </div>
 
     {{>footer}}
+
+    <script src='./js/app.js'></script>
 </body>
 </html>
