@@ -35,7 +35,7 @@ app.get('/help',(req,res) => {
 app.get('/about',(req , res) => {
     res.render('about', {
         name: 'Hadar',
-        job: 'Head of Proffesional Minds Confusers',
+        job: 'Head of Kings',
         title: "About"
     })
 })
