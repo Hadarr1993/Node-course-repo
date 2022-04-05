@@ -1,9 +1,11 @@
+const async = require("hbs/lib/async");
 const validator = require("validator");
 
 const results = {
   success: { statusCode: 200, success: true },
   failure: { statusCode: 400, success: false },
 };
+
 
 const emailValidate = (value) => {
   if (validator.isEmail(value)) {
@@ -25,5 +27,9 @@ const passValidate = (value) => {
   }
   return results.failure;
 };
-
-module.exports = { emailValidate, ageValidate, passValidate };
+const isValid = async (age,password,email) => {
+    if(ageValidate(age).success && passValidate(password).success && emailValidate(email).success) {
+      return true
+    }
+}
+module.exports = {isValid}
