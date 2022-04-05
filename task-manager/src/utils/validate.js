@@ -1,9 +1,9 @@
 const validator = require("validator");
 
 const results = {
-    success: { statusCode: 200, success: true },
-    failure:  { statusCode: 400, success: false }
-}
+  success: { statusCode: 200, success: true },
+  failure: { statusCode: 400, success: false },
+};
 
 const emailValidate = (value) => {
   if (validator.isEmail(value)) {
