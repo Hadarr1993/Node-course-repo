@@ -1,4 +1,4 @@
-const async = require("hbs/lib/async");
+
 const validator = require("validator");
 
 const results = {
