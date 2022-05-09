@@ -46,15 +46,15 @@ router.patch('/tasks/:id', async (req,res) => {
     const allowedUpdate = ['name' , 'description' , 'completed']
     const isValidOperation = updates.every(update =>  allowedUpdate.includes(update))
     const _id = req.params.id
-    const details = req.body
 
     if(!isValidOperation)  {
         return res.status(400).send({error: 'Invalid updates'})
     }
     
     try {
-        const task = await Task.findByIdAndUpdate(_id , details , {new: true , runValidators:true})
-        console.log(task);
+        const task = await Task.findById(_id)
+        updates.forEach(update => { task[update] = req.body[update] })
+        await task.save()
         task? res.send(task) : res.status(404).send()
         
     } catch(e) {
