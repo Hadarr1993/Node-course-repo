@@ -48,3 +48,65 @@ button {
     color: white;
     padding: 8px;
 }
+@media (max-width:767px) {
+    .ib-iframe-parent {
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      width: 95px;
+      height: 95px;
+      background: unset;
+      transition: background-color 1s 1s;
+      z-index: 9999999999;
+    }
+    .widget-open .ib-iframe-parent {
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+    }
+  }
+  @media (min-width:768px) {
+    .ib-iframe-parent {
+      width: 95px;
+      height: 95px;
+      position: fixed;
+      bottom: 0;
+      right: 15px;
+      z-index: 9999999999;
+    }
+    .widget-open .ib-iframe-parent {
+      width: 400px;
+      height: 695px;
+      max-height: 100vh;
+    }
+  }
+  .widget-close .ib-iframe-parent {
+    animation: close-widget .4s cubic-bezier(.62,.28,.23,.99);
+    animation-delay: .2s;
+    animation-fill-mode: both;
+  }
+  .ib-iframe {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+  .widget-embedded .ib-iframe {
+    position: static;
+  }
+  .widget-closed-no-chat-button .ib-iframe-parent {
+    animation: close-widget .4s cubic-bezier(.62,.28,.23,.99);
+    animation-delay: .2s;
+    animation-fill-mode: both;
+    width: 0px;
+    height: 0px;
+  }
+  @keyframes close-widget {
+    0% {
+      width: 400px;
+      height: 695px
+    }
+  }
+  
